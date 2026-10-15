@@ -1,0 +1,51 @@
+{
+  "manifest_version": 3,
+  "name": "FocusGeek: Block Websites",
+  "short_name": "FocusGeek",
+  "version": "1.0.0",
+  "description": "Block distracting websites all the time, on a schedule or during a focus timer, with a calm blocked page. Private, no tracking.",
+  "permissions": [
+    "declarativeNetRequest",
+    "storage",
+    "alarms",
+    "activeTab"
+  ],
+  "optional_host_permissions": [
+    "*://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "FocusGeek: block distracting sites",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_popup": "popup.html"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "blocked.html"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "homepage_url": "https://techygeekshome.info/browser-extensions/focusgeek/",
+  "minimum_chrome_version": "102"
+}

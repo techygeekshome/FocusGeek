@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blocked | FocusGeek</title>
+<link rel="icon" href="icons/icon32.png">
+<link rel="stylesheet" href="blocked.css">
+</head>
+<body>
+<main class="wrap" id="wrap">
+  <div class="mark" aria-hidden="true">
+    <svg viewBox="0 0 120 120"><circle class="halo" cx="60" cy="60" r="54"/><circle class="ring" cx="60" cy="60" r="38"/><line class="slash" x1="34" y1="34" x2="86" y2="86"/></svg>
+  </div>
+  <p class="eyebrow">FocusGeek</p>
+  <h1 id="title">This site is blocked</h1>
+  <div class="pill" id="site">&nbsp;</div>
+  <p class="why" id="why">&nbsp;</p>
+  <div class="timer" id="timer" hidden><span class="left" id="left">0:00</span><span class="cap">left in your focus session</span></div>
+  <div class="actions"><button class="primary" id="back">Back to work</button></div>
+  <div class="break" id="breakBox" hidden>
+    <button class="link" id="breakBtn">Allow for 5 minutes</button>
+    <div class="flow" id="breakFlow" hidden>
+      <p class="breath" id="breath">Take a breath. You can carry on in <b id="wait">10</b> seconds.</p>
+      <label for="typed" id="typeLab">Type <b id="typeWant"></b> to open it for <span class="mins">5</span> minutes</label>
+      <div class="typerow"><input type="text" id="typed" autocomplete="off" spellcheck="false" disabled><button id="breakGo" disabled>Open it</button></div>
+      <button class="link quiet" id="breakCancel">Never mind, back to work</button>
+    </div>
+  </div>
+  <p class="count" id="count"></p>
+</main>
+<footer><img src="icons/icon16.png" alt=""> FocusGeek <span>&middot;</span> <a href="options.html" id="settings">Settings</a></footer>
+<script src="common.js"></script>
+<script src="blocked.js"></script>
+</body>
+</html>

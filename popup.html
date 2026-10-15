@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en-GB">
+<head><meta charset="utf-8"><title>FocusGeek</title><link rel="stylesheet" href="ui.css"></head>
+<body class="popup">
+<header>
+  <img src="icons/icon48.png" alt="">
+  <div><div class="brand">FocusGeek</div><div class="host" id="host">&nbsp;</div></div>
+</header>
+
+<div class="card status" id="status"><span class="dot"></span><div><div class="big" id="state">&nbsp;</div><div class="muted" id="sub"></div></div><span class="clock" id="clock" hidden></span></div>
+
+<div class="go"><button class="primary" id="blockThis" disabled>Block this site</button><div class="note" id="blockNote" hidden></div></div>
+
+<div class="card" id="focusBox">
+  <div class="lab">Focus timer <small id="focusHint">blocks your list until the time is up</small></div>
+  <div id="focusPick">
+    <div class="chips" id="mins">
+      <button data-m="25">25 min</button><button data-m="50">50 min</button><button data-m="90">90 min</button><button data-m="custom">Custom</button>
+    </div>
+    <div class="row" id="customRow" hidden><input type="number" id="custom" min="1" max="600" value="45"> <span class="muted">minutes</span></div>
+    <div class="row"><button class="primary" id="startFocus">Start focus</button></div>
+  </div>
+  <div id="focusRun" hidden>
+    <div class="row"><span class="muted" id="focusEnds"></span><button class="small" id="endFocus">End session</button></div>
+    <div class="lock" id="strictNote" hidden>Strict mode is on: no breaks and no ending early.</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="lab"><span id="listTitle">Blocked sites</span> <small id="listCount"></small></div>
+  <div class="chips quick" id="presets" title="Quick add: block a whole group of sites in one tap"></div>
+  <div class="list" id="list"></div>
+  <form class="add" id="addForm"><input type="text" id="addSite" placeholder="Add a site, like youtube.com" autocomplete="off" spellcheck="false"><button type="submit">Add</button></form>
+  <div class="note bad" id="addNote" hidden></div>
+</div>
+
+<div class="foot"><span id="today"></span><a href="options.html" id="settings" target="_blank">Settings</a></div>
+<script src="common.js"></script>
+<script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en-GB">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>FocusGeek settings</title><link rel="icon" href="icons/icon32.png"><link rel="stylesheet" href="ui.css"></head>
+<body class="page">
+<header><img src="icons/icon48.png" alt=""><div><div class="brand">FocusGeek</div><h1>Settings</h1></div><span class="saved" id="saved" style="margin-left:auto">Saved</span></header>
+
+<div class="card lock" id="lockBox" hidden>Strict focus session running until <span id="lockUntil"></span>. Settings that would loosen blocking are locked until then.</div>
+
+<section class="card">
+  <h2>What to block</h2>
+  <div class="row"><label class="chk"><input type="radio" name="listMode" value="block"> Only the sites on my block list</label></div>
+  <div class="row"><label class="chk"><input type="radio" name="listMode" value="allow"> Everything except my allowed sites (allow list)</label></div>
+  <div class="note" id="allowNote" hidden>Allow list mode needs access to all sites to show the FocusGeek page. Without it, blocked sites show the browser&rsquo;s own &ldquo;blocked&rdquo; page instead.
+    <button class="small" id="allowAllBtn">Give access to all sites</button></div>
+  <div class="grid2" style="margin-top:12px">
+    <div>
+      <div class="lab">Block list <small id="blockCount"></small></div>
+      <div class="list" id="blockList"></div>
+      <form class="add" id="blockForm"><input type="text" id="blockAdd" placeholder="youtube.com" autocomplete="off" spellcheck="false"><button type="submit">Add</button></form>
+      <div class="note">Blocking a site also blocks everything under it, so youtube.com covers m.youtube.com and music.youtube.com.</div>
+    </div>
+    <div>
+      <div class="lab">Allowed sites <small id="allowCount"></small></div>
+      <div class="list" id="allowList"></div>
+      <form class="add" id="allowForm"><input type="text" id="allowAdd" placeholder="docs.google.com" autocomplete="off" spellcheck="false"><button type="submit">Add</button></form>
+      <div class="note">Only used in allow list mode.</div>
+    </div>
+  </div>
+  <div class="note bad" id="formNote" hidden></div>
+</section>
+
+<section class="card">
+  <h2>When to block</h2>
+  <div class="row"><label class="chk"><input type="radio" name="when" value="always"> All the time</label></div>
+  <div class="row"><label class="chk"><input type="radio" name="when" value="schedule"> On a schedule</label></div>
+  <div id="schedBox" style="margin:4px 0 8px 24px">
+    <div class="days" id="days"></div>
+    <div class="row">From <input type="time" id="from"> to <input type="time" id="to"> <span class="muted" id="schedText"></span></div>
+    <div class="note">If the end time is earlier than the start, blocking runs past midnight. The same start and end time means all day.</div>
+  </div>
+  <div class="row"><label class="chk"><input type="radio" name="when" value="focus"> Only during a focus session</label></div>
+  <div class="note">A focus session always blocks your list until its time is up, whatever you pick here.</div>
+</section>
+
+<section class="card">
+  <h2>Focus sessions and breaks</h2>
+  <div class="row">Usual session length <input type="number" id="focusMins" min="1" max="600"> minutes</div>
+  <div class="row"><label class="chk"><input type="checkbox" id="allowBreak"> <span>Show &ldquo;Allow for <span id="bm1">5</span> minutes&rdquo; on the blocked page (after a 10 second wait and typing the site&rsquo;s name)</span></label></div>
+  <div class="row">Break length <input type="number" id="breakMins" min="1" max="60"> minutes</div>
+  <div class="row"><label class="chk"><input type="checkbox" id="strict"> <span><b>Strict mode</b>: during a focus session, hide &ldquo;Allow for <span id="bm2">5</span> minutes&rdquo;, hide &ldquo;End session&rdquo; and don&rsquo;t let sites be removed</span></label></div>
+</section>
+
+<section class="card">
+  <h2>Quick add lists</h2>
+  <p class="note" style="margin-top:0">These are the sites the popup&rsquo;s quick add buttons block. One site per line.</p>
+  <div class="grid2" id="presetEdit"></div>
+</section>
+
+<section class="card">
+  <h2>Site access</h2>
+  <p class="note" style="margin-top:0">FocusGeek shows its own calm page on blocked sites it has access to, and asks for access one site at a time when you add them. Sites without access are still blocked, but the browser shows its own &ldquo;blocked&rdquo; page there, and tabs already open on them are left alone until you reload them.</p>
+  <div id="accessList" class="note"></div>
+  <div class="row"><button class="small" id="fixAccess" hidden>Give access to these sites</button><button class="small" id="allAccess">Give access to all sites</button><span class="muted" id="allAccessNote"></span></div>
+</section>
+
+<section class="card">
+  <h2>Block count</h2>
+  <div class="row"><label class="chk"><input type="checkbox" id="stats"> Count how often each site gets blocked (kept on this computer only)</label></div>
+  <table id="statsTable"><thead><tr><th>Site</th><th style="text-align:right">Today</th><th style="text-align:right">Last 7 days</th></tr></thead><tbody></tbody></table>
+  <div class="row"><button class="small" id="clearStats">Clear the counts</button></div>
+</section>
+
+<section class="card">
+  <h2>Private windows</h2>
+  <p class="note" style="margin-top:0">Browsers keep extensions switched off in private windows unless you allow them. To block sites there too, open FocusGeek&rsquo;s details on your browser&rsquo;s extensions page and turn on &ldquo;Allow in Incognito&rdquo; (Chrome, Brave), &ldquo;Allow in InPrivate&rdquo; (Edge) or &ldquo;Run in Private Windows&rdquo; (Firefox).</p>
+  <p class="note">FocusGeek has no account and sends nothing anywhere. Your lists, schedule and counts stay in your browser.</p>
+</section>
+<script src="common.js"></script>
+<script src="options.js"></script>
+</body>
+</html>
