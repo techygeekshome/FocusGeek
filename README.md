@@ -1,10 +1,49 @@
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/techygeekshome/FocusGeek/main/icons/icon128.png" alt="FocusGeek logo" width="96" height="96">
+
 # FocusGeek: Block Websites
+
+**Block distracting websites all the time, on a schedule or during a focus timer, with a calm blocked page. Private, no tracking.**
+
+[![Version](https://img.shields.io/github/v/release/techygeekshome/FocusGeek?label=version&color=4c9bff)](https://github.com/techygeekshome/FocusGeek/releases)
+[![Platform](https://img.shields.io/badge/browser-Chrome%20%7C%20Edge%20%7C%20Firefox-0078d4)](#%EF%B8%8F-download--install)
+[![License](https://img.shields.io/badge/license-GPL--3.0-3fb950)](LICENSE)
+[![Made by TechyGeeksHome](https://img.shields.io/badge/made%20by-TechyGeeksHome-b191f2)](https://techygeekshome.info)
+[![Support on Ko-fi](https://img.shields.io/badge/support-Ko--fi-ff5e5b)](https://ko-fi.com/techygeekshome)
+
+[Download](#%EF%B8%8F-download--install) · [Features](#-what-it-does) · [Privacy](#-privacy) · [Full guide](https://techygeekshome.info/browser-extensions/focusgeek/) · [License](#-license)
+
+</div>
+
+---
+
+## 🎬 See it in action
+
+[![FocusGeek demo video](https://img.youtube.com/vi/lGI-Xsda2Dc/maxresdefault.jpg)](https://www.youtube.com/watch?v=lGI-Xsda2Dc)
+
+---
 
 Block the websites that eat your day. Block them all the time, on a schedule (like weekdays 9 to 5), or only while a focus timer runs. Blocked sites show a calm page with the time left, instead of the feed you were about to scroll. Everything stays on your computer.
 
-**Download and full guide:** https://techygeekshome.info/browser-extensions/focusgeek/
+The full guide, with every step explained, is on [TechyGeeksHome](https://techygeekshome.info/browser-extensions/focusgeek/).
 
-## What it does
+## 📸 Screenshots
+
+<p float="left">
+  <img src="https://raw.githubusercontent.com/techygeekshome/FocusGeek/main/screenshots/focusgeek-blocked.jpg" width="49%" />
+  <img src="https://raw.githubusercontent.com/techygeekshome/FocusGeek/main/screenshots/focusgeek-feed.jpg" width="49%" />
+</p>
+<p float="left">
+  <img src="https://raw.githubusercontent.com/techygeekshome/FocusGeek/main/screenshots/focusgeek-focus-countdown.jpg" width="49%" />
+  <img src="https://raw.githubusercontent.com/techygeekshome/FocusGeek/main/screenshots/focusgeek-popup.jpg" width="49%" />
+</p>
+<p float="left">
+  <img src="https://raw.githubusercontent.com/techygeekshome/FocusGeek/main/screenshots/focusgeek-quick-add.jpg" width="49%" />
+  <img src="https://raw.githubusercontent.com/techygeekshome/FocusGeek/main/screenshots/focusgeek-schedule.jpg" width="49%" />
+</p>
+
+## ✨ What it does
 
 - **Block this site** in one click from the toolbar button. Blocking a site also blocks everything under it, so `youtube.com` covers `m.youtube.com` and `music.youtube.com`.
 - **Quick add** buttons for Social media, News, Video and Shopping. Tap one to block the whole group, tap it again to remove it. You can edit what is in each group in the settings.
@@ -16,14 +55,14 @@ Block the websites that eat your day. Block them all the time, on a schedule (li
 - **Tabs already open** on a site you block are moved to the blocked page straight away.
 - **Block count** (optional): how often each site was blocked today and this week, kept on your computer only.
 
-## What it won't do
+## 🚫 What it won't do
 
 - It does not block parts of a site (like one page or one channel). It blocks whole domains.
 - It can't stop you uninstalling or switching it off. It is there to help, not to lock you out.
 - It is off in private windows until you allow it there (see below).
 - It has no account, no sync between computers and no adverts.
 
-## Install
+## ⬇️ Download & install
 
 Pick the download for your browser from the [latest release](https://github.com/techygeekshome/FocusGeek/releases/latest).
 
@@ -53,7 +92,7 @@ Firefox removes temporary add-ons when it closes.
 
 The code in this repo is the Chromium version. `manifest.firefox.json` is the Firefox manifest. Run `./build.sh` to make every package in `dist/`.
 
-## Use
+## 🧭 How to use
 
 1. Go to a site that distracts you and click the FocusGeek button.
 2. Click **Block** and the site name. Your browser asks once whether FocusGeek may use that site, so it can show its own blocked page there.
@@ -64,7 +103,7 @@ The code in this repo is the Chromium version. `manifest.firefox.json` is the Fi
 
 Browsers keep extensions switched off in private windows unless you allow them. To block sites there too, open FocusGeek's details on the extensions page and turn on **Allow in Incognito** (Chrome, Brave), **Allow in InPrivate** (Edge) or **Run in Private Windows** (Firefox).
 
-## How it works
+## ⚙️ How it works
 
 - Blocking uses the browser's built-in **declarativeNetRequest** rules (`background.js`). FocusGeek gives the browser a short list of rules; the browser itself checks each page you open against them, so FocusGeek never reads or watches your browsing.
 - A blocked site is sent to `blocked.html` with a redirect rule. Browsers only let an extension redirect a site it has been given access to, so FocusGeek asks for access **one site at a time**, when you add that site. If you say no, the site is still blocked with a plain "block" rule, and the browser shows its own "blocked" page instead of FocusGeek's.
@@ -73,7 +112,7 @@ Browsers keep extensions switched off in private windows unless you allow them. 
 - When blocking starts, open tabs on blocked sites that FocusGeek can see (sites it has access to, or the tab you clicked the button on) are moved to the blocked page.
 - No remote code, no libraries, no network requests.
 
-## Permissions
+## 🔑 Permissions
 
 | Permission | Why |
 |---|---|
@@ -83,12 +122,32 @@ Browsers keep extensions switched off in private windows unless you allow them. 
 | `activeTab` | Lets the button see the site you are on, only when you click it |
 | Optional site access | Asked for one site at a time when you block it, so FocusGeek can show its own blocked page there. Never asked at install |
 
-## Privacy
+## 🔒 Privacy
 
 FocusGeek has no account, no analytics and makes no network requests of its own. Your lists, schedule and block counts stay in your browser and are never sent anywhere.
 
-## Licence
+## ☕ Support
+
+FocusGeek is free and always will be. If it saved you some time, you can [buy us a coffee on Ko-fi](https://ko-fi.com/techygeekshome). Welcome, but never expected.
+
+## 🐛 Support & contributing
+
+Found a bug or have a request? [Open an issue](https://github.com/techygeekshome/FocusGeek/issues) or [get in touch](https://techygeekshome.info/contact/). Pull requests are welcome.
+
+## 📄 License
 
 GPL-3.0. Free for everyone, including commercial use.
 
 FocusGeek is an independent tool made by [TechyGeeksHome](https://techygeekshome.info).
+
+© 2026 TechyGeeksHome.
+
+---
+
+<div align="center">
+
+Made with ❤️ by [**TechyGeeksHome**](https://techygeekshome.info)
+
+[Website](https://techygeekshome.info) · [YouTube](https://www.youtube.com/channel/UCtEuFj1SMLiuRoucD1hv8dA) · [X](https://x.com/TechyGeeks1) · [Instagram](https://www.instagram.com/andrewarmstrongtgh/)
+
+</div>
